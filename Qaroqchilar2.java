@@ -28,7 +28,6 @@ public class Qaroqchilar2 {
                     int wayForward = Math.max(a, b);
 
                     //for back way we have either a or b to return.
-                    //. times2 doesn't have 'a' or 'b' (whichever bigger);
                     List<Integer> dangerSideRemaining = new ArrayList(dangerSide);
                     //a and b left the danger side (remove by value now)
                     dangerSideRemaining.remove(new Integer(a));
@@ -43,7 +42,7 @@ public class Qaroqchilar2 {
                     int r2 = wayForward;
 
                     //now the fastest will come back, So we need to add to dangerSideRemaining back
-                    Integer fastest = getFastestFromSafeSide(safeSideNew);
+                    Integer fastest = safeSideNew.stream().min(Integer::compare).get();
                     dangerSideRemaining.add(fastest);
 
                     // and we need to remove from safeSide, since he left safeSide (remove by Value)
@@ -62,9 +61,5 @@ public class Qaroqchilar2 {
             }
             return r;
         }
-    }
-
-    private static Integer getFastestFromSafeSide(List<Integer> safeSideNew) {
-        return safeSideNew.stream().min(Integer::compare).get();
-    }
+    } 
 }
