@@ -36,7 +36,6 @@ public class Qaroqchilar {
                     int wayForward = Math.max(a, b);
 
                     //for back way we have either a or b to return.
-                    //. times2 doesn't have 'a' or 'b' (whichever bigger);
                     List<Integer> dangerSideRemaining = new ArrayList(dangerSide);
                     //a and b left the danger side (remove by value now)
                     dangerSideRemaining.remove(new Integer(a));
